@@ -3,6 +3,7 @@ const inicioDebug = require('debug')('app:inicio')//Importar el pauete debug
                                     //de depuración
 const dbDebug = require('debug')('app:db')
 const usuarios = require('./routes/usuarios');
+const productos = require('./routes/productos');
 const express = require('express') //Importa el paquete express
 const config = require('config')
 const app = express() //Crea una instancia de express
@@ -32,6 +33,8 @@ app.use('/api/usuarios', usuarios) //middelware que importamos
 //El primer parámetro es la ruta raíz asociada con las peticiones a los datos de usuarios
 //con las peticiones a los datos de usuarios
 //
+
+app.use('api/productos', productos);
             
 console.log(`Aplicación: ${config.get('nombre')}`)
 console.log(`DB server: ${config.get('configDB.host')}`)
