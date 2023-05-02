@@ -14,13 +14,15 @@ ruta.get('/', (req, res) => {
 }) 
 
 //Con los : delante del id, express sabe que es un parámetro para recibir en la ruta
+//en este caso 'id' advierte que recibirá un parámetro de tipo id que 'req.params'
+//recibe com string
 ruta.get('/:id', (req, res) => {
     //En el cuerpo del objeto req está la propiedad
     //params, que guarda los parámetos enviados
     //Los parámetros en req.params se reciben como Strings
     //parseInt, se hace como casteo a valores enteros directamente
     /* const id = parseInt(req.params.id)
-    //Find devuelve el primer usuario que cumpla con el predicado
+    //-----Find devuelve el primer usuario que cumpla con el predicado
     const usuario = usuarios.find( u => u.id === id) */
     const id = req.params.id
     let usuario = existeUsuario(req.params.id)
@@ -123,7 +125,7 @@ ruta.put('/:id', (req, res) => {
 
 })
 
-function existeUsuario(id){
+/* function existeUsuario(id){
     return (usuarios.find(u => u.id ===parseInt(id)))
 }
 
@@ -133,7 +135,7 @@ function validarUsuario(nom){
     })
     return (schema.validate({nombre: nom}))
 }
-
+ */
 
 /* app.get('/api/productos', (req, res) => {
     res.send(['Manzana', 'Durazno', 'ETC'])

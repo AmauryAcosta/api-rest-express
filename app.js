@@ -23,7 +23,7 @@ app.use(express.json());//Le decimos a express que use este
                     //middleware
 
 app.use(express.urlencoded({extended:true})); //Nuevo Middelware
-                                        //Define el uso de la libreria qs para separar
+                                        //Define el uso de la libreria js para separar
                                         //la información codificada en el url
 
 app.use(express.static('public')); //Nombre de la carpeta que tendrá los archivos 
@@ -82,7 +82,7 @@ app.listen(port, () => {
 
 
 //---------------- Funciones middleware---------------------
-//El middleware es un bloue de código que se ejecuta entre las peticiones del usuario (request)
+//El middleware es un bloque de código que se ejecuta entre las peticiones del usuario (request)
 //y la petición que llega el servidor. Es un enlace entre la petición del usuario
 //y el servidor, antes de que éste pueda dar una repuesta
 

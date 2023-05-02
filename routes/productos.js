@@ -83,7 +83,7 @@ ruta.put('/:id', (req, res) => {
     //Encontrsr si existe el usuario a modificar 
     let producto = existeProducto(req.params.id)
     if(!producto){
-        res.statur(404).send('El usuario no se encuentra')//Devuelve el estado HTTP
+        res.status(404).send('El usuario no se encuentra')//Devuelve el estado HTTP
         return;
     }
         //Validar si el estado recibido es correcto
